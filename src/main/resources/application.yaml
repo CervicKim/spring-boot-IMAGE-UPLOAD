@@ -1,0 +1,50 @@
+application:
+  version: v0.0.1
+  title: Spring JPA
+
+spring:
+  profiles:
+    active: dev
+
+aws:
+  s3:
+    # access-id: AKIAQQFBMA7T4UQNGWVL
+    # access-pw: qbHplp6cZjwaJdHj0Ihq3UT7GvodvyAysg8YGY7C
+    access-id: your_id
+    access-pw: your_pw
+    bucket: cervic.pro
+
+---
+## 개발모드
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dw_501
+    username: root
+    password: tkddnjs0823
+  jpa:
+    database: mysql
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+---
+## 운영모드
+spring:
+  profiles: env
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dw_501
+    username: root
+    password: tkddnjs0823
+  jpa:
+    database: mysql
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+    show-sql: false
