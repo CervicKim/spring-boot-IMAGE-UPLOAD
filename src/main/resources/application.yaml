@@ -8,8 +8,7 @@ spring:
 
 aws:
   s3:
-    # access-id: AKIAQQFBMA7T4UQNGWVL
-    # access-pw: qbHplp6cZjwaJdHj0Ihq3UT7GvodvyAysg8YGY7C
+    
     access-id: your_id
     access-pw: your_pw
     bucket: cervic.pro
